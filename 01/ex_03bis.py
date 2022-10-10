@@ -43,8 +43,8 @@ class Budget:
                     transactions_amounts.append(amount)
         else:
             for amount in self.transactions.get(category):
-                 transactions_amounts.append(amount)
-        print(f"transactions_amounts {transactions_amounts}")
+                transactions_amounts.append(amount)
+        # print(f"transactions_amounts {transactions_amounts}")
         return transactions_amounts
 
     def print_transactions(self, category=""):
@@ -76,12 +76,5 @@ class Budget:
         os.remove(self.path)
         with open(self.path, 'w') as f:
             json.dump(self.data, f, indent=4)
-
-
-myBudget = Budget("../data/transaction.json")
-
-myBudget.add_transactions([-12, -102.13], " corn for poney ")
-
-myBudget.print_transactions()
 
 
