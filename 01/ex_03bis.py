@@ -15,6 +15,7 @@ class Budget:
         print(data)
         return data
 
+    # get dict of transaction
     def get_transaction(self):
         dict_transactions = {}
         for categories in self.data.values():
@@ -22,6 +23,7 @@ class Budget:
                 dict_transactions[category.get(" category ")] = category.get(" value ")
         return dict_transactions
 
+    # print a list of all transaction
     def print_list_transaction(self, transactions_amounts):
 
         for transation_amount in transactions_amounts:
@@ -32,6 +34,7 @@ class Budget:
                 else:
                     print(f"You spent {-1 * transation_amount} euros")
 
+    # return a list with the amounts of all transactions
     def get_list_transactions(self, category=""):
         transactions_amounts = []
         if category == "":
